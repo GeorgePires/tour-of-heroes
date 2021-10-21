@@ -1,25 +1,28 @@
 class HerosController < ApplicationController
+#? Solic senha de usuario e criando senha de acesso no master.key
+#! Run EDITOR="code --wait" bin/rails credentials:edit
+
+  http_basic_authenticate_with name: Rails.application.credentials.authenticate[:name], 
+                               password: Rails.application.credentials.authenticate[:password],
+                               except: [:index, :show]
+
   before_action :set_hero, only: %i[ show edit update destroy ]
 
-  # GET /heros or /heros.json
+  
   def index
     @heros = Hero.all
   end
-
-  # GET /heros/1 or /heros/1.json
+  
   def show
   end
-
-  # GET /heros/new
+  
   def new
     @hero = Hero.new
   end
 
-  # GET /heros/1/edit
   def edit
   end
 
-  # POST /heros or /heros.json
   def create
     @hero = Hero.new(hero_params)
 
