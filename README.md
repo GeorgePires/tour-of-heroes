@@ -29,7 +29,7 @@
 
 ```bash
 # clonar o projeto
-git clone https://github.com/peimelo/curso_tour_of_heroes_api.git
+git clone https://github.com/GeorgePires/tour-of-heroes.git
 cd curso_tour_of_heroes_api
 
 # instalar dependências do Ruby on Rails
